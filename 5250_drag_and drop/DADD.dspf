@@ -1,0 +1,73 @@
+     A                                      DSPSIZ(24 80 *DS3)
+     A          R RCDR
+     A                                      CA03(03 'END')
+     A                                      MOUBTN(*URP *URR ENTER)
+     A                                      RTNCSRLOC(*MOUSE &GROW1 &GCOL1 &GRO-
+     A                                      W2 &GCOL2)
+     A                                      CSRLOC(SROW SCOL)
+      * RTNCSRLOC hidden variables
+     A            GROW1          3S 0H
+     A            GCOL1          3S 0H
+     A            GROW2          3S 0H
+     A            GCOL2          3S 0H
+      * CSRLOC hidden variables
+     A            SROW           3S 0H
+     A            SCOL           3S 0H
+      *
+      * Attribute variables
+     A            LBOXATR        1A  P
+     A            RBOXATR        1A  P
+      *
+     A                                  5 13'<< Test Drag and Drop >>'
+     A                                      DSPATR(HI)
+     A                                  7 20'CTR ='
+     A            CTR            3S 0O    +1
+      * Row and column
+     A                                  9  9'10'
+     A                                  9 20'20'
+     A                                 10  7'10'
+     A                                 15  7'15'
+      *
+     A                                  9 29'30'
+     A                                  9 40'40'
+     A                                 10 27'10'
+     A                                 15 27'15'
+      * Left box
+     A                                 10 10'           '
+     A                                      DSPATR(&LBOXATR)
+     A                                 11 10'           '
+     A                                      DSPATR(&LBOXATR)
+     A                                 12 10'           '
+     A                                      DSPATR(&LBOXATR)
+     A                                 13 10'           '
+     A                                      DSPATR(&LBOXATR)
+     A                                 14 10'           '
+     A                                      DSPATR(&LBOXATR)
+     A                                 15 10'           '
+     A                                      DSPATR(&LBOXATR)
+      *
+     A                                 17 10'COL2 ='
+     A            COL2           3S 0O 17 17
+     A                                 18 10'ROW2 ='
+     A            ROW2           3S 0O 18 17
+     A                                 17 30'COL1 ='
+      * Right box
+     A                                 10 30'           '
+     A                                      DSPATR(&RBOXATR)
+     A                                 11 30'           '
+     A                                      DSPATR(&RBOXATR)
+     A            MSG           11   O 12 30
+     A                                      DSPATR(&RBOXATR)
+     A                                 13 30'           '
+     A                                      DSPATR(&RBOXATR)
+     A                                 14 30'           '
+     A                                      DSPATR(&RBOXATR)
+     A                                 15 30'           '
+     A                                      DSPATR(&RBOXATR)
+      *
+     A            COL1           3S 0O 17 37
+     A                                 18 30'ROW1 ='
+     A            ROW1           3S 0O 18 37
+     A*
+     A                                 23  2'F3=END'
+      *
